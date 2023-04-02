@@ -1,4 +1,5 @@
 # python3
+#Jūlija Sokolova 221RDB058
 
 class Query:
     def __init__(self, query):
@@ -9,10 +10,15 @@ class Query:
 
 def read_queries():
     n = int(input())
-    return [Query(input().split()) for i in range(n)]
+    queries=[]
+    for i in range(n):
+        query=input().split()
+        queries.append(Query(query))
+    return queries    
 
 def write_responses(result):
-    print('\n'.join(result))
+    for response in result:
+        print(response)
 
 def process_queries(queries):
     result = []
