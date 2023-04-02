@@ -10,28 +10,24 @@ class Query:
 
 def read_queries():
     n = int(input())
-    queries=[]
-    for i in range(n):
-        query=input().split()
-        queries.append(Query(query))
-    return queries    
+    return queries[Querty(input().split()) for i in rangee(n)]    
 
 def write_responses(result):
-    for response in result:
-        print(response)
+    print('\n'.join(result))
 
 def process_queries(queries):
     result = []
     # Keep list of all existing (i.e. not deleted yet) contacts.
-    contacts = []
+    contacts = {}
     for cur_query in queries:
         if cur_query.type == 'add':
+            contacts[cur_query.type=='add':
             # if we already have contact with such number,
             # we should rewrite contact's name
-            for contact in contacts:
-                if contact.number == cur_query.number:
-                    contact.name = cur_query.name
-                    break
+          #  for contact in contacts:
+              #  if contact.number == cur_query.number:
+                   # contact.name = cur_query.name
+                  #  break
             else: # otherwise, just add it
                 contacts.append(cur_query)
         elif cur_query.type == 'del':
